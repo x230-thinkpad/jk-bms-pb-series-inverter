@@ -1,0 +1,348 @@
+modbus:
+  - name: "jk_bms"
+    type: serial
+    method: rtu
+    port: /dev/ttyACM0 # Replace with your serial port
+    baudrate: 115200
+    bytesize: 8
+    parity: N
+    stopbits: 1
+    timeout: 3
+    sensors:
+#JK-PB2A16S15P-DIP-1#
+      - name: "jk_bms1_cell_voltage_01"
+        slave: 1
+        address: 0x1200
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_01"
+      - name: "jk_bms1_cell_voltage_02"
+        slave: 1
+        address: 0x1202
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_02"
+      - name: "jk_bms1_cell_voltage_03"
+        slave: 1
+        address: 0x1204
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_03"
+      - name: "jk_bms1_cell_voltage_04"
+        slave: 1
+        address: 0x1206
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_04"
+      - name: "jk_bms1_cell_voltage_05"
+        slave: 1
+        address: 0x1208
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_05"
+      - name: "jk_bms1_cell_voltage_06"
+        slave: 1
+        address: 0x120A
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_06"
+      - name: "jk_bms1_cell_voltage_07"
+        slave: 1
+        address: 0x120C
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_07"
+      - name: "jk_bms1_cell_voltage_08"
+        slave: 1
+        address: 0x120E
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_08"
+      - name: "jk_bms1_cell_voltage_09"
+        slave: 1
+        address: 0x1210
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_09"
+      - name: "jk_bms1_cell_voltage_10"
+        slave: 1
+        address: 0x1212
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_10"
+      - name: "jk_bms1_cell_voltage_11"
+        slave: 1
+        address: 0x1214
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_11"
+      - name: "jk_bms1_cell_voltage_12"
+        slave: 1
+        address: 0x1216
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_12"
+      - name: "jk_bms1_cell_voltage_13"
+        slave: 1
+        address: 0x1218
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_13"
+      - name: "jk_bms1_cell_voltage_14"
+        slave: 1
+        address: 0x121A
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_14"
+      - name: "jk_bms1_cell_voltage_15"
+        slave: 1
+        address: 0x121C
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_15"
+      - name: "jk_bms1_Total_Voltage"
+        slave: 1
+        address: 0x1290
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint32
+        precision: 2
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_Total_Voltage"
+      - name: "jk_bms1_Cell_Diffrent_Voltage"
+        slave: 1
+        address: 0x1246
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_Cell_Diffrent_Voltage"
+      - name: "jk_bms1_Cell_Avg_Voltage"
+        slave: 1
+        address: 0x1244
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_Cell_Avg_Voltage"
+      - name: "jk_bms1_Current"
+        slave: 1
+        address: 0x1298
+        input_type: holding
+        unit_of_measurement: "A"
+        device_class: current
+        data_type: int32
+        precision: 2
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_Current"
+      - name: "jk_bms1_CellDiff-Triger.Bal"
+        slave: 1
+        address: 0x1014
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint32
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_CellDiff-Triger.Bal"
+      - name: "jk_bms1_Balancing_Current"
+        slave: 1
+        address: 0x12A4
+        input_type: holding
+        unit_of_measurement: "A"
+        data_type: int16
+        precision: 2
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_Balancing_Current"
+      - name: "jk_bms1_Cycle"
+        slave: 1
+        address: 0x12B0
+        input_type: holding
+        unit_of_measurement: " "
+        data_type: uint32
+        precision: 1
+        scale: 1
+        scan_interval: 5
+        unique_id: "jk_bms1_Cycle"
+      - name: "jk_bms1_Cycle_Capacity"
+        slave: 1
+        address: 0x12B4
+        input_type: holding
+        unit_of_measurement: "Ah"
+        data_type: uint32
+        precision: 2
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_Cycle_Capacity"
+      - name: "jk_bms1_Capacity_Remaining"
+        slave: 1
+        address: 0x12A8
+        input_type: holding
+        unit_of_measurement: "Ah"
+        data_type: int32
+        precision: 2
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_Capacity_Remaining"
+      - name: "jk_bms1_Battery_Capacity"
+        slave: 1
+        address: 0x12AC
+        input_type: holding
+        unit_of_measurement: "Ah"
+        data_type: uint32
+        precision: 2
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_Battery_Capacity"
+      - name: "jk_bms1_Temperature 1"
+        slave: 1
+        address: 0x129C
+        input_type: holding
+        unit_of_measurement: "°C"
+        device_class: temperature
+        data_type: int16
+        precision: 2
+        scale: 0.1
+        scan_interval: 5
+        unique_id: "jk_bms1_Temperature_1"
+      - name: "jk_bms1_Temperature 2"
+        slave: 1
+        address: 0x129E
+        input_type: holding
+        unit_of_measurement: "°C"
+        device_class: temperature
+        data_type: int16
+        precision: 2
+        scale: 0.1
+        scan_interval: 5
+        unique_id: "jk_bms1_Temperature_2"
+      - name: "jk_bms1_Temperature 4"
+        slave: 1
+        address: 0x12FA
+        input_type: holding
+        unit_of_measurement: "°C"
+        device_class: temperature
+        data_type: int16
+        precision: 2
+        scale: 0.1
+        scan_interval: 5
+        unique_id: "jk_bms1_Temperature_4"
+      - name: "jk_bms1_Temperature 5"
+        slave: 1
+        address: 0x12FC
+        input_type: holding
+        unit_of_measurement: "°C"
+        device_class: temperature
+        data_type: int16
+        precision: 2
+        scale: 0.1
+        scan_interval: 5
+        unique_id: "jk_bms1_Temperature_5"
+      - name: "jk_bms1_Mosfet_Temperature"
+        slave: 1
+        address: 0x128A
+        input_type: holding
+        unit_of_measurement: "°C"
+        device_class: temperature
+        data_type: int16
+        precision: 2
+        scale: 0.1
+        scan_interval: 5
+        unique_id: "jk_bms1_Mosfet_Temperature"
+      - name: "jk_bms1_Environmental_Temp"
+        slave: 1
+        address: 0x12F8
+        input_type: holding
+        unit_of_measurement: "°C"
+        device_class: temperature
+        data_type: int16
+        precision: 2
+        scale: 0.1
+        scan_interval: 5
+        unique_id: "jk_bms1_Environmental_Temp"
