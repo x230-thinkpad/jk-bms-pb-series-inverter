@@ -6,13 +6,12 @@ The idea is monitor Jk-pb bms to home assistant used RS485 converter directly
 
 put yaml code into home assistant configuration.yaml and restart HA, the BMS will appear into modbus entities if success connecting
 
-    BMS Tested:
-    JK-PB2A15S16P
+BMS Tested:
+JK-PB2A15S16P
 
 if want to connect 2 or more bms, change naming and slave
-
-    #sample#
-    DIP 1 - Slave: 1
-    DIP 2 - Slave: 2
-    DIP 3 - Slave: 3
+#sample#
+DIP 1 - Slave: 1
+DIP 2 - Slave: 2
+DIP 3 - Slave: 3
 
