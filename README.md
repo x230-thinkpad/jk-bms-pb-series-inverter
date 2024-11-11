@@ -15,3 +15,6 @@ DIP 1 - Slave: 1
 DIP 2 - Slave: 2
 DIP 3 - Slave: 3
 
+![image](https://github.com/user-attachments/assets/513f1786-0580-435b-bc8c-384876ddfbe4)
+![image](https://github.com/user-attachments/assets/ba4649c5-c319-42bc-aacb-bdfda1802689)
+
