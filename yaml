@@ -175,6 +175,17 @@ modbus:
         scale: 0.001
         scan_interval: 5
         unique_id: "jk_bms1_cell_voltage_15"
+      - name: "jk_bms1_cell_voltage_16"
+        slave: 1
+        address: 0x121E
+        input_type: holding
+        unit_of_measurement: "V"
+        device_class: voltage
+        data_type: uint16
+        precision: 3
+        scale: 0.001
+        scan_interval: 5
+        unique_id: "jk_bms1_cell_voltage_16"
       - name: "jk_bms1_Total_Voltage"
         slave: 1
         address: 0x1290
@@ -240,6 +251,18 @@ modbus:
         scale: 0.001
         scan_interval: 5
         unique_id: "jk_bms1_Balancing_Current"
+      - name: "jk_bms1_State_Of_Charge"
+        slave: 1
+        address: 0x12A6
+        input_type: holding
+        unit_of_measurement: "%"
+        data_type: int16
+        precision: 2
+        min_value: 0
+        max_value: 100
+        scale: 1
+        scan_interval: 5
+        unique_id: "jk_bms1_State_Of_Charge"
       - name: "jk_bms1_Cycle"
         slave: 1
         address: 0x12B0
