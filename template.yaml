@@ -1,0 +1,251 @@
+template:
+
+  - switch:
+
+# =========================
+# JK BMS1 CHARGE
+# UINT32 @ 0x1070
+# =========================
+
+      - name: "JK BMS1 Charge"
+        unique_id: "jk_bms1_charge_switch"
+
+        state: >
+          {{ states('sensor.jk_bms1_charge_status') | int(0) == 1 }}
+
+        turn_on:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x1070
+            value:
+              - 1
+              - 0
+
+        turn_off:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x1070
+            value:
+              - 0
+              - 0
+
+# =========================
+# JK BMS1 DISCHARGE
+# UINT32 @ 0x1074
+# =========================
+
+      - name: "JK BMS1 Discharge"
+        unique_id: "jk_bms1_discharge_switch"
+
+        state: >
+          {{ states('sensor.jk_bms1_discharge_status') | int(0) == 1 }}
+
+        turn_on:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x1074
+            value:
+              - 1
+              - 0
+
+        turn_off:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x1074
+            value:
+              - 0
+              - 0
+
+# =========================
+# JK BMS1 BALANCE
+# UINT32 @ 0x1078
+# =========================
+
+      - name: "JK BMS1 Balance"
+        unique_id: "jk_bms1_balance_switch"
+
+        state: >
+          {{ states('sensor.jk_bms1_balance_status') | int(0) == 1 }}
+
+        turn_on:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x1078
+            value:
+              - 1
+              - 0
+
+        turn_off:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x1078
+            value:
+              - 0
+              - 0
+
+# =========================
+# JK BMS1 CHARGING FLOAT MODE
+# BIT9 @ 0x0114
+# =========================
+
+      - name: "JK BMS1 Charging Float Mode"
+        unique_id: "jk_bms1_charging_float_mode_switch"
+
+        state: >
+          {{ ((states('sensor.jk_bms1_control_flags') | int(0)) // 512) % 2 == 1 }}
+
+        turn_on:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 512) % 2 == 1) else val + 512 }}
+
+        turn_off:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 512) % 2 == 0) else val - 512 }}
+
+# =========================
+# JK BMS1 DISABLE TEMP SENSOR
+# BIT1 @ 0x0114
+# =========================
+
+      - name: "JK BMS1 Disable Temp Sensor"
+        unique_id: "jk_bms1_disable_temp_sensor_switch"
+
+        state: >
+          {{ ((states('sensor.jk_bms1_control_flags') | int(0)) // 2) % 2 == 1 }}
+
+        turn_on:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 2) % 2 == 1) else val + 2 }}
+
+        turn_off:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 2) % 2 == 0) else val - 2 }}
+
+# =========================
+# JK BMS1 DISPLAY ALWAYS ON
+# BIT4 @ 0x0114
+# =========================
+
+      - name: "JK BMS1 Display Always On"
+        unique_id: "jk_bms1_display_always_on_switch"
+
+        state: >
+          {{ ((states('sensor.jk_bms1_control_flags') | int(0)) // 16) % 2 == 1 }}
+
+        turn_on:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 16) % 2 == 1) else val + 16 }}
+
+        turn_off:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 16) % 2 == 0) else val - 16 }}
+
+# =========================
+# JK BMS1 SMART SLEEP
+# BIT6 @ 0x0114
+# =========================
+
+      - name: "JK BMS1 Smart Sleep"
+        unique_id: "jk_bms1_smart_sleep_switch"
+
+        state: >
+          {{ ((states('sensor.jk_bms1_control_flags') | int(0)) // 64) % 2 == 1 }}
+
+        turn_on:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 64) % 2 == 1) else val + 64 }}
+
+        turn_off:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 64) % 2 == 0) else val - 64 }}
+
+# =========================
+# JK BMS1 DISABLE PAR-LIMITER
+# BIT7 @ 0x0114
+# =========================
+
+      - name: "JK BMS1 Disable Par-Limiter"
+        unique_id: "jk_bms1_disable_par_limiter_switch"
+
+        state: >
+          {{ ((states('sensor.jk_bms1_control_flags') | int(0)) // 128) % 2 == 1 }}
+
+        turn_on:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 128) % 2 == 1) else val + 128 }}
+
+        turn_off:
+          service: modbus.write_register
+          data:
+            hub: jk_bms
+            slave: 1
+            address: 0x0114
+            value: >
+              {% set val = states('sensor.jk_bms1_control_flags') | int(0) %}
+              {{ val if ((val // 128) % 2 == 0) else val - 128 }}
