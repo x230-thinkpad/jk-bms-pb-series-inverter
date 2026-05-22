@@ -369,3 +369,48 @@ modbus:
         scale: 0.1
         scan_interval: 5
         unique_id: "jk_bms1_Environmental_Temp"
+    
+# =========================
+# CHARGE STATUS
+# =========================
+      - name: "jk_bms1_charge_status"
+        slave: 1
+        address: 0x1070
+        input_type: holding
+        data_type: uint32
+        scan_interval: 5
+        unique_id: "jk_bms1_charge_status"
+
+# =========================
+# DISCHARGE STATUS
+# =========================
+      - name: "jk_bms1_discharge_status"
+        slave: 1
+        address: 0x1074
+        input_type: holding
+        data_type: uint32
+        scan_interval: 5
+        unique_id: "jk_bms1_discharge_status"
+
+# =========================
+# BALANCE STATUS
+# =========================
+      - name: "jk_bms1_balance_status"
+        slave: 1
+        address: 0x1078
+        input_type: holding
+        data_type: uint32
+        scan_interval: 5
+        unique_id: "jk_bms1_balance_status"
+
+# =========================
+# CONTROL FLAGS
+# 0x0114
+# =========================
+      - name: "jk_bms1_control_flags"
+        slave: 1
+        address: 0x1114
+        input_type: holding
+        data_type: uint16
+        scan_interval: 5
+        unique_id: "jk_bms1_control_flags"
